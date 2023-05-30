@@ -1,0 +1,3 @@
+sudo dhclient -v -d -4 -s 127.0.0.1
+
+dhcping

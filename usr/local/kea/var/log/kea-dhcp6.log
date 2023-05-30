@@ -1,0 +1,244 @@
+2023-05-20 22:27:17.252 INFO  [kea-dhcp6.hosts/40.140125964552064] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-20 22:27:17.253 INFO  [kea-dhcp6.dhcpsrv/40.140125964552064] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-20 22:27:17.254 INFO  [kea-dhcp6.commands/40.140125964552064] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-20 22:27:17.259 INFO  [kea-dhcp6.dhcp6/40.140125964552064] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-20 22:27:17.260 INFO  [kea-dhcp6.dhcpsrv/40.140125964552064] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-20 22:27:17.261 INFO  [kea-dhcp6.dhcpsrv/40.140125964552064] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-21 21:14:30.226 INFO  [kea-dhcp6.hosts/43.140187322627968] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-21 21:14:30.228 INFO  [kea-dhcp6.dhcpsrv/43.140187322627968] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-21 21:14:30.230 INFO  [kea-dhcp6.commands/43.140187322627968] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-21 21:14:30.231 INFO  [kea-dhcp6.dhcp6/43.140187322627968] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-21 21:14:30.231 INFO  [kea-dhcp6.dhcpsrv/43.140187322627968] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-21 21:14:30.232 INFO  [kea-dhcp6.dhcpsrv/43.140187322627968] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-21 21:19:21.841 INFO  [kea-dhcp6.hosts/41.140679131051904] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-21 21:19:21.841 INFO  [kea-dhcp6.dhcpsrv/41.140679131051904] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-21 21:19:21.843 INFO  [kea-dhcp6.commands/41.140679131051904] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-21 21:19:21.843 INFO  [kea-dhcp6.dhcp6/41.140679131051904] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-21 21:19:21.844 INFO  [kea-dhcp6.dhcpsrv/41.140679131051904] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-21 21:19:21.845 INFO  [kea-dhcp6.dhcpsrv/41.140679131051904] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 14:53:01.508 INFO  [kea-dhcp6.hosts/40.140090349807488] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 14:53:01.516 INFO  [kea-dhcp6.dhcpsrv/40.140090349807488] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 14:53:01.524 INFO  [kea-dhcp6.commands/40.140090349807488] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 14:53:01.525 INFO  [kea-dhcp6.dhcp6/40.140090349807488] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 14:53:01.525 INFO  [kea-dhcp6.dhcpsrv/40.140090349807488] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 14:53:01.526 INFO  [kea-dhcp6.dhcpsrv/40.140090349807488] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 14:55:27.273 INFO  [kea-dhcp6.hosts/43.140429789177728] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 14:55:27.274 INFO  [kea-dhcp6.dhcpsrv/43.140429789177728] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 14:55:27.276 INFO  [kea-dhcp6.commands/43.140429789177728] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 14:55:27.277 INFO  [kea-dhcp6.dhcp6/43.140429789177728] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 14:55:27.277 INFO  [kea-dhcp6.dhcpsrv/43.140429789177728] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 14:55:27.280 INFO  [kea-dhcp6.dhcpsrv/43.140429789177728] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 14:56:32.014 INFO  [kea-dhcp6.hosts/43.140438922094464] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 14:56:32.015 INFO  [kea-dhcp6.dhcpsrv/43.140438922094464] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 14:56:32.016 INFO  [kea-dhcp6.commands/43.140438922094464] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 14:56:32.018 INFO  [kea-dhcp6.dhcp6/43.140438922094464] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 14:56:32.019 INFO  [kea-dhcp6.dhcpsrv/43.140438922094464] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 14:56:32.020 INFO  [kea-dhcp6.dhcpsrv/43.140438922094464] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:10:56.945 INFO  [kea-dhcp6.hosts/43.140444420233088] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:10:56.947 INFO  [kea-dhcp6.dhcpsrv/43.140444420233088] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:10:56.950 INFO  [kea-dhcp6.commands/43.140444420233088] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:10:56.951 INFO  [kea-dhcp6.dhcp6/43.140444420233088] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:10:56.951 INFO  [kea-dhcp6.dhcpsrv/43.140444420233088] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:10:56.952 INFO  [kea-dhcp6.dhcpsrv/43.140444420233088] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:14:48.823 INFO  [kea-dhcp6.hosts/43.140673922066304] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:14:48.825 INFO  [kea-dhcp6.dhcpsrv/43.140673922066304] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:14:48.830 INFO  [kea-dhcp6.commands/43.140673922066304] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:14:48.831 INFO  [kea-dhcp6.dhcp6/43.140673922066304] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:14:48.832 INFO  [kea-dhcp6.dhcpsrv/43.140673922066304] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:14:48.833 INFO  [kea-dhcp6.dhcpsrv/43.140673922066304] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:15:43.860 INFO  [kea-dhcp6.hosts/39.140225990190976] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:15:43.864 INFO  [kea-dhcp6.dhcpsrv/39.140225990190976] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:15:43.873 INFO  [kea-dhcp6.commands/39.140225990190976] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:15:43.876 INFO  [kea-dhcp6.dhcp6/39.140225990190976] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:15:43.878 INFO  [kea-dhcp6.dhcpsrv/39.140225990190976] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:15:43.880 INFO  [kea-dhcp6.dhcpsrv/39.140225990190976] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:18:01.198 INFO  [kea-dhcp6.hosts/39.139918851577728] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:18:01.207 INFO  [kea-dhcp6.dhcpsrv/39.139918851577728] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:18:01.213 INFO  [kea-dhcp6.commands/39.139918851577728] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:18:01.215 INFO  [kea-dhcp6.dhcp6/39.139918851577728] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:18:01.217 INFO  [kea-dhcp6.dhcpsrv/39.139918851577728] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:18:01.231 INFO  [kea-dhcp6.dhcpsrv/39.139918851577728] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:19:01.017 INFO  [kea-dhcp6.hosts/43.139885123344256] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:19:01.019 INFO  [kea-dhcp6.dhcpsrv/43.139885123344256] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:19:01.021 INFO  [kea-dhcp6.commands/43.139885123344256] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:19:01.022 INFO  [kea-dhcp6.dhcp6/43.139885123344256] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:19:01.023 INFO  [kea-dhcp6.dhcpsrv/43.139885123344256] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:19:01.027 INFO  [kea-dhcp6.dhcpsrv/43.139885123344256] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:19:01.029 INFO  [kea-dhcp6.dhcpsrv/43.139885123344256] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 15:19:01.031 INFO  [kea-dhcp6.dhcp6/43.139885123344256] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 15:19:01.036 WARN  [kea-dhcp6.dhcpsrv/43.139885123344256] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 15:19:01.038 WARN  [kea-dhcp6.dhcp6/43.139885123344256] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 15:19:01.038 INFO  [kea-dhcp6.dhcp6/43.139885123344256] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 15:24:39.682 INFO  [kea-dhcp6.hosts/40.139658181334912] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:24:39.685 INFO  [kea-dhcp6.dhcpsrv/40.139658181334912] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:24:39.686 INFO  [kea-dhcp6.commands/40.139658181334912] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:24:39.687 INFO  [kea-dhcp6.dhcp6/40.139658181334912] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:24:39.688 INFO  [kea-dhcp6.dhcpsrv/40.139658181334912] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:24:39.691 INFO  [kea-dhcp6.dhcpsrv/40.139658181334912] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:24:39.700 INFO  [kea-dhcp6.dhcpsrv/40.139658181334912] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 15:24:39.704 INFO  [kea-dhcp6.dhcp6/40.139658181334912] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 15:24:39.705 WARN  [kea-dhcp6.dhcpsrv/40.139658181334912] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 15:24:39.707 WARN  [kea-dhcp6.dhcp6/40.139658181334912] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 15:24:39.707 INFO  [kea-dhcp6.dhcp6/40.139658181334912] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 15:53:28.827 INFO  [kea-dhcp6.hosts/39.140238873802624] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 15:53:28.830 INFO  [kea-dhcp6.dhcpsrv/39.140238873802624] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 15:53:28.832 INFO  [kea-dhcp6.commands/39.140238873802624] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 15:53:28.834 INFO  [kea-dhcp6.dhcp6/39.140238873802624] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 15:53:28.838 INFO  [kea-dhcp6.dhcpsrv/39.140238873802624] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 15:53:28.844 INFO  [kea-dhcp6.dhcpsrv/39.140238873802624] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 15:53:28.853 INFO  [kea-dhcp6.dhcpsrv/39.140238873802624] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 15:53:28.857 INFO  [kea-dhcp6.dhcp6/39.140238873802624] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 15:53:28.858 WARN  [kea-dhcp6.dhcpsrv/39.140238873802624] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 15:53:28.860 WARN  [kea-dhcp6.dhcp6/39.140238873802624] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 15:53:28.860 INFO  [kea-dhcp6.dhcp6/39.140238873802624] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:00:07.679 INFO  [kea-dhcp6.hosts/43.140620901418880] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:00:07.680 INFO  [kea-dhcp6.dhcpsrv/43.140620901418880] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:00:07.681 INFO  [kea-dhcp6.commands/43.140620901418880] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:00:07.683 INFO  [kea-dhcp6.dhcp6/43.140620901418880] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:00:07.683 INFO  [kea-dhcp6.dhcpsrv/43.140620901418880] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:00:07.684 INFO  [kea-dhcp6.dhcpsrv/43.140620901418880] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:00:07.686 INFO  [kea-dhcp6.dhcpsrv/43.140620901418880] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:00:07.688 INFO  [kea-dhcp6.dhcp6/43.140620901418880] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:00:07.692 WARN  [kea-dhcp6.dhcpsrv/43.140620901418880] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:00:07.694 WARN  [kea-dhcp6.dhcp6/43.140620901418880] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:00:07.694 INFO  [kea-dhcp6.dhcp6/43.140620901418880] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:08:29.736 INFO  [kea-dhcp6.hosts/39.139845299578752] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:08:29.741 INFO  [kea-dhcp6.dhcpsrv/39.139845299578752] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:08:29.745 INFO  [kea-dhcp6.commands/39.139845299578752] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:08:29.747 INFO  [kea-dhcp6.dhcp6/39.139845299578752] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:08:29.747 INFO  [kea-dhcp6.dhcpsrv/39.139845299578752] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:08:29.753 INFO  [kea-dhcp6.dhcpsrv/39.139845299578752] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:08:29.756 INFO  [kea-dhcp6.dhcpsrv/39.139845299578752] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:08:29.758 INFO  [kea-dhcp6.dhcp6/39.139845299578752] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:08:29.759 WARN  [kea-dhcp6.dhcpsrv/39.139845299578752] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:08:29.761 WARN  [kea-dhcp6.dhcp6/39.139845299578752] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:08:29.761 INFO  [kea-dhcp6.dhcp6/39.139845299578752] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:15:08.483 INFO  [kea-dhcp6.hosts/40.140576061994880] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:15:08.485 INFO  [kea-dhcp6.dhcpsrv/40.140576061994880] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:15:08.487 INFO  [kea-dhcp6.commands/40.140576061994880] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:15:08.488 INFO  [kea-dhcp6.dhcp6/40.140576061994880] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:15:08.488 INFO  [kea-dhcp6.dhcpsrv/40.140576061994880] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:15:08.489 INFO  [kea-dhcp6.dhcpsrv/40.140576061994880] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:15:08.492 INFO  [kea-dhcp6.dhcpsrv/40.140576061994880] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:15:08.498 INFO  [kea-dhcp6.dhcp6/40.140576061994880] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:15:08.499 WARN  [kea-dhcp6.dhcpsrv/40.140576061994880] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:15:08.501 WARN  [kea-dhcp6.dhcp6/40.140576061994880] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:15:08.501 INFO  [kea-dhcp6.dhcp6/40.140576061994880] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:16:26.757 INFO  [kea-dhcp6.hosts/39.140627070625664] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:16:26.761 INFO  [kea-dhcp6.dhcpsrv/39.140627070625664] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:16:26.763 INFO  [kea-dhcp6.commands/39.140627070625664] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:16:26.764 INFO  [kea-dhcp6.dhcp6/39.140627070625664] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:16:26.765 INFO  [kea-dhcp6.dhcpsrv/39.140627070625664] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:16:26.766 INFO  [kea-dhcp6.dhcpsrv/39.140627070625664] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:16:26.769 INFO  [kea-dhcp6.dhcpsrv/39.140627070625664] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:16:26.772 INFO  [kea-dhcp6.dhcp6/39.140627070625664] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:16:26.772 WARN  [kea-dhcp6.dhcpsrv/39.140627070625664] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:16:26.775 WARN  [kea-dhcp6.dhcp6/39.140627070625664] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:16:26.775 INFO  [kea-dhcp6.dhcp6/39.140627070625664] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:18:46.241 INFO  [kea-dhcp6.hosts/43.140641347381120] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:18:46.243 INFO  [kea-dhcp6.dhcpsrv/43.140641347381120] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:18:46.245 INFO  [kea-dhcp6.commands/43.140641347381120] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:18:46.249 INFO  [kea-dhcp6.dhcp6/43.140641347381120] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:18:46.250 INFO  [kea-dhcp6.dhcpsrv/43.140641347381120] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:18:46.252 INFO  [kea-dhcp6.dhcpsrv/43.140641347381120] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:18:46.253 INFO  [kea-dhcp6.dhcpsrv/43.140641347381120] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:18:46.256 INFO  [kea-dhcp6.dhcp6/43.140641347381120] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:18:46.257 WARN  [kea-dhcp6.dhcpsrv/43.140641347381120] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:18:46.260 WARN  [kea-dhcp6.dhcp6/43.140641347381120] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:18:46.260 INFO  [kea-dhcp6.dhcp6/43.140641347381120] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:20:44.064 INFO  [kea-dhcp6.hosts/39.139962176821120] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:20:44.067 INFO  [kea-dhcp6.dhcpsrv/39.139962176821120] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:20:44.069 INFO  [kea-dhcp6.commands/39.139962176821120] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:20:44.070 INFO  [kea-dhcp6.dhcp6/39.139962176821120] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:20:44.070 INFO  [kea-dhcp6.dhcpsrv/39.139962176821120] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:20:44.072 INFO  [kea-dhcp6.dhcpsrv/39.139962176821120] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:20:44.074 INFO  [kea-dhcp6.dhcpsrv/39.139962176821120] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:20:44.077 INFO  [kea-dhcp6.dhcp6/39.139962176821120] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:20:44.078 WARN  [kea-dhcp6.dhcpsrv/39.139962176821120] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:20:44.079 WARN  [kea-dhcp6.dhcp6/39.139962176821120] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:20:44.079 INFO  [kea-dhcp6.dhcp6/39.139962176821120] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:25:13.433 INFO  [kea-dhcp6.hosts/39.140276740081536] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:25:13.436 INFO  [kea-dhcp6.dhcpsrv/39.140276740081536] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:25:13.437 INFO  [kea-dhcp6.commands/39.140276740081536] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:25:13.438 INFO  [kea-dhcp6.dhcp6/39.140276740081536] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:25:13.438 INFO  [kea-dhcp6.dhcpsrv/39.140276740081536] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:25:13.440 INFO  [kea-dhcp6.dhcpsrv/39.140276740081536] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:25:13.446 INFO  [kea-dhcp6.dhcpsrv/39.140276740081536] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:25:13.449 INFO  [kea-dhcp6.dhcp6/39.140276740081536] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:25:13.450 WARN  [kea-dhcp6.dhcpsrv/39.140276740081536] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:25:13.452 WARN  [kea-dhcp6.dhcp6/39.140276740081536] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:25:13.453 INFO  [kea-dhcp6.dhcp6/39.140276740081536] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:26:58.518 INFO  [kea-dhcp6.hosts/38.140236780939136] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:26:58.521 INFO  [kea-dhcp6.dhcpsrv/38.140236780939136] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:26:58.524 INFO  [kea-dhcp6.commands/38.140236780939136] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:26:58.525 INFO  [kea-dhcp6.dhcp6/38.140236780939136] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:26:58.526 INFO  [kea-dhcp6.dhcpsrv/38.140236780939136] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:26:58.528 INFO  [kea-dhcp6.dhcpsrv/38.140236780939136] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:26:58.530 INFO  [kea-dhcp6.dhcpsrv/38.140236780939136] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:26:58.533 INFO  [kea-dhcp6.dhcp6/38.140236780939136] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:26:58.533 WARN  [kea-dhcp6.dhcpsrv/38.140236780939136] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:26:58.535 WARN  [kea-dhcp6.dhcp6/38.140236780939136] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:26:58.536 INFO  [kea-dhcp6.dhcp6/38.140236780939136] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:27:50.362 INFO  [kea-dhcp6.hosts/43.140047586760576] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:27:50.364 INFO  [kea-dhcp6.dhcpsrv/43.140047586760576] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:27:50.366 INFO  [kea-dhcp6.commands/43.140047586760576] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:27:50.367 INFO  [kea-dhcp6.dhcp6/43.140047586760576] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:27:50.367 INFO  [kea-dhcp6.dhcpsrv/43.140047586760576] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:27:50.369 INFO  [kea-dhcp6.dhcpsrv/43.140047586760576] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:27:50.372 INFO  [kea-dhcp6.dhcpsrv/43.140047586760576] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:27:50.376 INFO  [kea-dhcp6.dhcp6/43.140047586760576] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:27:50.377 WARN  [kea-dhcp6.dhcpsrv/43.140047586760576] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:27:50.379 WARN  [kea-dhcp6.dhcp6/43.140047586760576] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:27:50.379 INFO  [kea-dhcp6.dhcp6/43.140047586760576] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:28:20.667 INFO  [kea-dhcp6.hosts/44.140370093856640] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:28:20.668 INFO  [kea-dhcp6.dhcpsrv/44.140370093856640] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:28:20.670 INFO  [kea-dhcp6.commands/44.140370093856640] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:28:20.670 INFO  [kea-dhcp6.dhcp6/44.140370093856640] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:28:20.671 INFO  [kea-dhcp6.dhcpsrv/44.140370093856640] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:28:20.676 INFO  [kea-dhcp6.dhcpsrv/44.140370093856640] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:28:20.682 INFO  [kea-dhcp6.dhcpsrv/44.140370093856640] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:28:20.688 INFO  [kea-dhcp6.dhcp6/44.140370093856640] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:28:20.689 WARN  [kea-dhcp6.dhcpsrv/44.140370093856640] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:28:20.691 WARN  [kea-dhcp6.dhcp6/44.140370093856640] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:28:20.692 INFO  [kea-dhcp6.dhcp6/44.140370093856640] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 16:38:35.432 INFO  [kea-dhcp6.hosts/43.140084857206656] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-27 16:38:35.435 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-27 16:38:35.437 INFO  [kea-dhcp6.commands/43.140084857206656] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-27 16:38:35.439 INFO  [kea-dhcp6.dhcp6/43.140084857206656] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-27 16:38:35.439 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-27 16:38:35.447 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-27 16:38:35.452 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-27 16:38:35.457 INFO  [kea-dhcp6.dhcp6/43.140084857206656] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-27 16:38:35.458 WARN  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-27 16:38:35.461 WARN  [kea-dhcp6.dhcp6/43.140084857206656] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-27 16:38:35.461 INFO  [kea-dhcp6.dhcp6/43.140084857206656] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started
+2023-05-27 17:38:36.316 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-27 17:38:36.324 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-28 02:02:34.306 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-28 02:02:34.312 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-28 03:02:35.113 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-28 03:02:35.126 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 00:27:57.218 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 00:27:57.248 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 01:27:57.981 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 01:27:57.999 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 13:18:43.149 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 13:18:43.154 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 14:18:43.770 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 14:18:43.787 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 15:18:44.543 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 15:18:44.548 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 16:18:44.586 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_START starting Lease File Cleanup
+2023-05-30 16:18:44.593 INFO  [kea-dhcp6.dhcpsrv/43.140084857206656] DHCPSRV_MEMFILE_LFC_EXECUTE executing Lease File Cleanup using: /usr/local/kea/sbin/kea-lfc -6 -x /usr/local/kea/var/lib/kea/kea-leases6.csv.2 -i /usr/local/kea/var/lib/kea/kea-leases6.csv.1 -o /usr/local/kea/var/lib/kea/kea-leases6.csv.output -f /usr/local/kea/var/lib/kea/kea-leases6.csv.completed -p /usr/local/kea/var/lib/kea/kea-leases6.csv.pid -c ignored-path
+2023-05-30 16:48:13.341 INFO  [kea-dhcp6.hosts/43.139875829168000] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-30 16:48:13.351 INFO  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_CFGMGR_NEW_SUBNET6 a new subnet has been added to configuration: 2001:db8:1::/64 with params: t1=1000, t2=2000, preferred-lifetime=3000, valid-lifetime=4000, rapid-commit is false
+2023-05-30 16:48:13.353 INFO  [kea-dhcp6.commands/43.139875829168000] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea6-ctrl-socket
+2023-05-30 16:48:13.354 INFO  [kea-dhcp6.dhcp6/43.139875829168000] DHCP6_CONFIG_COMPLETE DHCPv6 server has completed configuration: added IPv6 subnets: 1; DDNS: disabled
+2023-05-30 16:48:13.354 INFO  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=6
+2023-05-30 16:48:13.357 INFO  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv.1
+2023-05-30 16:48:13.358 INFO  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases6.csv
+2023-05-30 16:48:13.362 INFO  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_MEMFILE_LFC_SETUP setting up the Lease File Cleanup interval to 3600 sec
+2023-05-30 16:48:13.368 INFO  [kea-dhcp6.dhcp6/43.139875829168000] DHCP6_USING_SERVERID server is using server-id 00:01:00:01:2c:04:db:e5:00:0c:29:68:fb:7b and stores in the file /usr/local/kea/var/lib/kea/kea-dhcp6-serverid
+2023-05-30 16:48:13.371 WARN  [kea-dhcp6.dhcpsrv/43.139875829168000] DHCPSRV_NO_SOCKETS_OPEN no interface configured to listen to DHCP traffic
+2023-05-30 16:48:13.375 WARN  [kea-dhcp6.dhcp6/43.139875829168000] DHCP6_MULTI_THREADING_INFO enabled: no, number of threads: 0, queue size: 0
+2023-05-30 16:48:13.375 INFO  [kea-dhcp6.dhcp6/43.139875829168000] DHCP6_STARTED Kea DHCPv6 server version 2.2.0-git started

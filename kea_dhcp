@@ -1,0 +1,90 @@
+#!/bin/bash
+
+#set -e   # exit on error
+#set -n  # syntax checking only
+
+DOCKER="/usr/bin/docker";
+
+
+# sudo ip link add eth_bri type bridge
+
+############################################################
+function setup {
+
+   echo "download kea"
+   docker pull tr3g0r/kea-dhcp
+
+   #mkdir etc/kea and usr/local
+   mkdir -p  a+x usr/local/kea/sbin
+   touch usr/local/kea/sbin/kea-lfc
+   chown -R kia.kia usr/local/kea
+   chmod a+x usr/local/kea/sbin/kea-lfc
+
+}
+############################################################
+function start_dhcp {
+
+   echo "Create network dhcp-net"
+   $DOCKER network inspect dhcp-net --format {{.Id}} 2>/dev/null || \
+   $DOCKER network create dhcp-net -d macvlan \
+   --opt com.docker.network.driver.mtu=9216 \
+   --opt com.docker.network.bridge.name=dhcp-net
+
+   docker run --rm --detach --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/var/log/:/usr/local/kea/var/log/ -it tr3g0r/kea-dhcp
+   docker network connect --ip=192.0.2.2 dhcp-net dhcp
+
+   #echo "Create container u-rr"
+   #$DOCKER run --rm --detach --name u-rr -h u-rr --privileged -v "$(pwd)"/${HOSTNAME}/u-rr/config:/config -v "$(pwd)"/${HOSTNAME}/u-rr/log:/var/log -m 2048MB --memory-swap=2048MB --cpus=2 -it ${CRPD_IMAGE}
+
+
+
+   #docker run -it --rm --net=dhcp-net alpine
+   #docker run --rm --detach --name alpine01 -h alpine01 -it alpine
+   #docker network connect --ip=10.10.0.101 dhcp-net alpine01
+   #
+   #ip link set veth0 master dhcp-net
+
+
+}
+
+############################################################
+function start_clients {
+
+   docker run --rm --detach --name alpine01 -h alpine01 --network dhcp-net -it alpine
+   docker run --rm --detach --name alpine02 -h alpine02 --network dhcp-net -it alpine
+   docker run --rm --detach --name alpine03 -h alpine03 --network dhcp-net -it alpine
+
+}
+
+############################################################
+function stop {
+
+sudo docker stop dhcp
+
+
+}
+############################################################
+function template {
+
+$PSQL --file - << SQL
+
+BEGIN;
+
+
+ROLLBACK;
+
+SQL
+
+}
+
+
+############################################################
+############################################################
+############################################################
+########## MAIN ##########
+############################################################
+
+
+eval "$@"
+
+

@@ -1,0 +1,7 @@
+2023-05-20 22:27:17.236 INFO  [kea-dhcp4.hosts/30.140245523437440] HOSTS_BACKENDS_REGISTERED the following host backend types are available: 
+2023-05-20 22:27:17.238 INFO  [kea-dhcp4.dhcpsrv/30.140245523437440] DHCPSRV_CFGMGR_SOCKET_TYPE_DEFAULT "dhcp-socket-type" not specified , using default socket type raw
+2023-05-20 22:27:17.239 INFO  [kea-dhcp4.dhcpsrv/30.140245523437440] DHCPSRV_CFGMGR_NEW_SUBNET4 a new subnet has been added to configuration: 192.0.2.0/24 with params: t1=900, t2=1800, valid-lifetime=3600
+2023-05-20 22:27:17.240 INFO  [kea-dhcp4.commands/30.140245523437440] COMMAND_ACCEPTOR_START Starting to accept connections via unix domain socket bound to /tmp/kea4-ctrl-socket
+2023-05-20 22:27:17.242 INFO  [kea-dhcp4.dhcp4/30.140245523437440] DHCP4_CONFIG_COMPLETE DHCPv4 server has completed configuration: added IPv4 subnets: 1; DDNS: disabled
+2023-05-20 22:27:17.242 INFO  [kea-dhcp4.dhcpsrv/30.140245523437440] DHCPSRV_MEMFILE_DB opening memory file lease database: lfc-interval=3600 type=memfile universe=4
+2023-05-20 22:27:17.244 INFO  [kea-dhcp4.dhcpsrv/30.140245523437440] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /usr/local/kea/var/lib/kea/kea-leases4.csv

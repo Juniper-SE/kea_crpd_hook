@@ -1,0 +1,84 @@
+#!/usr/bin/bash
+
+############################################################
+function net_stop {
+
+    echo "=== net stop ==="
+    ip netns delete dhcpns
+    ip link set br2 down
+    #brctl delbr br2
+    ip link del dev br2
+    #ip link del dev dhcp1
+    #ip link del dev dhcp2
+
+}
+
+############################################################
+function net_start {
+
+    echo "=== net start ==="
+    #brctl addbr br2
+    ip link add br2 type bridge
+    ip link add dhcp1 type veth peer dhcp2
+    #brctl addif br2 dhcp1
+    ip link set dhcp1 master br2
+    ip addr add 10.10.10.1/24 dev br2
+    ip link set br2 up
+    ip link set dhcp1 up
+    
+    ip netns add dhcpns
+    ip link set dhcp2 netns dhcpns
+    #ip link set br2 up
+    ip link set dhcp1 up
+    #ip netns exec dhcpns ip addr add 10.10.10.2/24 dev dhcp2
+    ip netns exec dhcpns ip link set dhcp2 up
+
+}
+
+############################################################
+function kea_start {
+
+	rm $(pwd)/usr/local/kea/var/run/kea/kea-dhcp4.kea-dhcp4.pid
+	rm $(pwd)/usr/local/kea/var/run/kea/kea-dhcp6.kea-dhcp6.pid
+	rm $(pwd)/usr/local/kea/var/run/kea/kea-ctrl-agent.kea-ctrl-agent.pid
+
+    # --detach
+    #docker run --rm --network=host --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/var/log/:/usr/local/kea/var/log/ -it tr3g0r/kea-dhcp
+    docker run --rm --network=host --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/:/usr/local/kea/ -it tr3g0r/kea-dhcp -d
+
+
+}
+
+############################################################
+function kea_test {
+
+    #ip netns exec dhcpns ping -c 2 10.10.10.1
+    ip netns exec dhcpns dhclient -d -v 
+    #ip netns exec dhcpns dhcping -V -s 10.10.10.1
+
+}
+
+############################################################
+function check {
+
+    echo "=== check ==="
+    set -x
+    brctl show br2
+    echo ""
+    ip addr show dev br2
+    echo ""
+    ip addr show dev dhcp1
+    echo ""
+    ip netns exec dhcpns ip addr
+    echo ""
+    ip netns exec dhcpns ping -c 3 10.10.10.1
+}
+
+########## MAIN ##########
+############################################################
+
+eval "$@"
+
+
+
+
