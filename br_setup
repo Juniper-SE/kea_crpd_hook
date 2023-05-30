@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+
+DHCP_SERVER="/mnt/hgfs/bsherwood/juniper/git/kea/src/bin/dhcp4/kea-dhcp4"
+
 ############################################################
 function net_stop {
 
@@ -36,7 +39,7 @@ function net_start {
 }
 
 ############################################################
-function kea_start {
+function kea_server {
 
 	rm $(pwd)/usr/local/kea/var/run/kea/kea-dhcp4.kea-dhcp4.pid
 	rm $(pwd)/usr/local/kea/var/run/kea/kea-dhcp6.kea-dhcp6.pid
@@ -44,13 +47,15 @@ function kea_start {
 
     # --detach
     #docker run --rm --network=host --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/var/log/:/usr/local/kea/var/log/ -it tr3g0r/kea-dhcp
-    docker run --rm --network=host --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/:/usr/local/kea/ -it tr3g0r/kea-dhcp -d
+    #docker run --rm --network=host --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/:/usr/local/kea/ -it tr3g0r/kea-dhcp -d
+    $DHCP_SERVER -d -c etc/kea/kea-dhcp4.conf
+
 
 
 }
 
 ############################################################
-function kea_test {
+function kea_client {
 
     #ip netns exec dhcpns ping -c 2 10.10.10.1
     ip netns exec dhcpns dhclient -d -v 
@@ -76,6 +81,11 @@ function check {
 
 ########## MAIN ##########
 ############################################################
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
 eval "$@"
 
