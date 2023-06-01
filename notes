@@ -1,3 +1,8 @@
 sudo dhclient -v -d -4 -s 127.0.0.1
 
 dhcping
+
+- Install mqtt broker
+sudo apt update -y && sudo apt install mosquitto mosquitto-clients -y
+
+https://www.arubacloud.com/tutorial/how-to-install-and-secure-mosquitto-on-ubuntu-20-04.aspx
