@@ -34,6 +34,8 @@ def process_command ():
         print ("publish to MQTT")
         #publish.single("paho/test/single", "payload", hostname="mqtt.eclipseprojects.io")
         publish.single(args.mq, json.dumps(data), hostname="localhost")
+    else:
+        print ("received unknown command:",args.hook_command)
 
 
 
@@ -52,7 +54,7 @@ if __name__ == "__main__":
     if (args.debug):
         print("Debug on",args.debug)
         pprint(sys.argv)
-        pprint(os.environ)
+        pprint(dict(os.environ))
 
     print("hook command:",args.hook_command)
     print("sending to queue:",args.mq)
