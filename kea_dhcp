@@ -22,7 +22,7 @@ function setup {
 
 }
 ############################################################
-function start_dhcp {
+function start_dhcp_server {
 
    echo "Create network dhcp-net"
    $DOCKER network inspect dhcp-net --format {{.Id}} 2>/dev/null || \
@@ -48,7 +48,7 @@ function start_dhcp {
 }
 
 ############################################################
-function start_clients {
+function start_dhcp_clients {
 
    docker run --rm --detach --name alpine01 -h alpine01 --network dhcp-net -it alpine
    docker run --rm --detach --name alpine02 -h alpine02 --network dhcp-net -it alpine
@@ -57,33 +57,36 @@ function start_clients {
 }
 
 ############################################################
-function stop {
+function stop_dhcp_server {
 
 sudo docker stop dhcp
 
 
 }
 ############################################################
-function template {
+function start_crpd {
 
-$PSQL --file - << SQL
-
-BEGIN;
+	docker run --rm --detach --name crpd01 -h crpd01 --privileged --net=host -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
 
 
-ROLLBACK;
-
-SQL
 
 }
 
-
-############################################################
-############################################################
 ############################################################
 ########## MAIN ##########
 ############################################################
 
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+if [ $# -eq 0 ]; then
+    echo "No function provided:"
+    echo ""
+    compgen -A function
+    exit 1
+fi
 
 eval "$@"
 
