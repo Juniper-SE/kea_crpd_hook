@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+import sys
+sys.path.append('./proto/proto2')
+
+
 import argparse
 import grpc
 import paho.mqtt.client as mqtt
@@ -7,14 +11,24 @@ import json
 from pprint import pprint
 
 
-import bgp_route_service_pb2
-import bgp_route_service_pb2_grpc
-import prpd_common_pb2
-import prpd_common_pb2_grpc
-import jnx_addr_pb2
-import jnx_addr_pb2_grpc
-import authentication_service_pb2
-import authentication_service_pb2_grpc
+#import authentication_service_pb2
+#import bgp_route_service_pb2
+#import prpd_common_pb2
+#import jnx_addr_pb2
+
+import jnx_authentication_service_pb2
+import jnx_routing_bgp_service_pb2
+import 
+
+
+#import bgp_route_service_pb2
+#import bgp_route_service_pb2_grpc
+#import prpd_common_pb2
+#import prpd_common_pb2_grpc
+#import jnx_addr_pb2
+#import jnx_addr_pb2_grpc
+#import authentication_service_pb2
+#import authentication_service_pb2_grpc
 
 
 TIMEOUT = 10
@@ -44,31 +58,6 @@ def on_message(client, userdata, msg):
 
 ### JET ###
 
-def RouteInit(bgp):
-    print('############## INVOKING BgpRouteInitialize API #############')
-    strBgpReq = bgp_route_service_pb2.BgpRouteInitializeRequest()
-    result = bgp.BgpRouteInitialize(strBgpReq, timeout=TIMEOUT)
-    print('BgpRouteInitialize API return = %d' % result.status)
-    if ((result.status != bgp_route_service_pb2.BgpRouteInitializeReply.SUCCESS) and
-        (result.status != bgp_route_service_pb2.BgpRouteInitializeReply.SUCCESS_STATE_REBOUND)):
-        print('Error on Initialize')
-
-
-class Auth(object):
-    def __init__(self, conn, user, password):
-        self.conn = conn
-        self.user = user
-        self.password = password
-        self.timeout = 60
-
-    def grpc_login(self, client_id):
-        auth_stub = authentication_service_pb2_grpc.LoginStub(self.conn)
-        login_response = auth_stub.LoginCheck(
-            authentication_service_pb2.LoginRequest(
-            user_name=self.user,
-            password=self.password,
-            client_id=client_id), self.timeout)
-        return login_response.result
 
 
 
@@ -82,18 +71,42 @@ def main():
     args = parser.parse_args()
     
 
-    # Connect and Authenticate via TCP from on or off-box
-    conn = grpc.insecure_channel('%s:%d' % (args.device, int(args.port)))
-    a = Auth(conn, args.username, args.password)
-    login = a.grpc_login(args.client_id)
+    try:
+        # open gRPC channel
+        print("")
+        print(__file__)
+        print("Trying to Login to", args.device, "port",
+              args.port, "as user", args.username, "... ", end='')
+        channel = grpc.insecure_channel('%s:%d' % (args.device, args.port))
+        auth_stub = authentication_service_pb2.LoginStub(channel)
+        login_response = auth_stub.LoginCheck(
+            authentication_service_pb2.LoginRequest(
+                user_name=args.username,
+                password=args.password,
+                client_id=clientid), _JET_TIMEOUT)
 
-    # Create the BGP service stub
-    bgp = bgp_route_service_pb2_grpc.BgpRouteStub(conn)
+        if login_response.result == 1:
+            print("Login successful")
+        else:
+            print("Login failed")
+            sys.exit(1)
 
-    # Init and begin adding routes
-    RouteInit(bgp)
+    except Exception as tx:
+        print(tx)
 
 
+#    # Create the BGP service stub
+#    bgp = bgp_route_service_pb2.BgpRouteStub(channel)
+#    strBgpReq = bgp_route_service_pb2.BgpRouteInitializeRequest()
+#    result = bgp.BgpRouteInitialize(strBgpReq, timeout=_JET_TIMEOUT)
+#    if ((result.status != bgp_route_service_pb2.BgpRouteInitializeReply.SUCCESS) and
+#        (result.status != bgp_route_service_pb2.BgpRouteInitializeReply.SUCCESS_STATE_REBOUND)):
+#        print("Error on Initialize")
+#    print("Successfully connected to BGP Route Service")
+
+
+
+    exit()
 
     client = mqtt.Client()
     client.on_connect = on_connect

@@ -6,6 +6,9 @@ In this Proof of Concept (POC), we utilize the Kea DHCP server hooks feature to 
 
 # Setup
 
+- Start a bridge br2 with 10.10.10.1/24 subnet.
+
+
 - Install MQTT broker
 ```
 sudo apt update -y && sudo apt install mosquitto mosquitto-clients -y
@@ -14,4 +17,11 @@ sudo apt update -y && sudo apt install mosquitto mosquitto-clients -y
 - Install python MQTT client
 ```
 sudo apt install python3-paho-mqtt
+```
+
+ - Config for our device
+```
+$ cat /etc/mosquitto/conf.d/bds_local.conf
+allow_anonymous true
+listener 1883 10.10.10.1
 ```

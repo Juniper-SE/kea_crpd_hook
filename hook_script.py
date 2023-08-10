@@ -33,7 +33,7 @@ def process_command ():
 
         print ("publish to MQTT")
         #publish.single("paho/test/single", "payload", hostname="mqtt.eclipseprojects.io")
-        publish.single(args.mq, json.dumps(data), hostname="localhost")
+        publish.single(args.mq, json.dumps(data), hostname=args.mq_server)
     else:
         print ("received unknown command:",args.hook_command)
 
@@ -48,6 +48,7 @@ if __name__ == "__main__":
 
     parser.add_argument('hook_command', help='the dhcp server hook command')     
     parser.add_argument('-mq', default='dhcp_server', help='the MQTT queue to send to')     
+    parser.add_argument('-mq_server', default='10.10.10.1', help='the MQTT server to send to')     
     parser.add_argument('-d', '--debug', action='store_true')
 
     args = parser.parse_args()

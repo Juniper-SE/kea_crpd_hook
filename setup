@@ -1,109 +1,111 @@
-#!/bin/bash
-
-#set -e   # exit on error
-#set -n  # syntax checking only
-
-DOCKER="/usr/bin/docker";
+#!/usr/bin/bash
 
 
-# sudo ip link add eth_bri type bridge
+DHCP_SERVER="/mnt/hgfs/bsherwood/juniper/git/kea/src/bin/dhcp4/kea-dhcp4"
+
+HOOK_LIB="/mnt/hgfs/bsherwood/juniper/git/kea/src/hooks/dhcp/run_script/.libs/libdhcp_run_script.so"
+
+
 
 ############################################################
-function setup {
+function net_stop {
 
-   echo "download kea"
-   docker pull tr3g0r/kea-dhcp
-
-   #mkdir etc/kea and usr/local
-   mkdir -p  a+x usr/local/kea/sbin
-   touch usr/local/kea/sbin/kea-lfc
-   chown -R kia.kia usr/local/kea
-   chmod a+x usr/local/kea/sbin/kea-lfc
-
-}
-############################################################
-function start_dhcp_server {
-
-   echo "Create network dhcp-net"
-   $DOCKER network inspect dhcp-net --format {{.Id}} 2>/dev/null || \
-   $DOCKER network create dhcp-net -d macvlan \
-   --opt com.docker.network.driver.mtu=9216 \
-   --opt com.docker.network.bridge.name=dhcp-net
-
-   docker run --rm --detach --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/var/log/:/usr/local/kea/var/log/ -it tr3g0r/kea-dhcp
-   docker network connect --ip=192.0.2.2 dhcp-net dhcp
-
-   #echo "Create container u-rr"
-   #$DOCKER run --rm --detach --name u-rr -h u-rr --privileged -v "$(pwd)"/${HOSTNAME}/u-rr/config:/config -v "$(pwd)"/${HOSTNAME}/u-rr/log:/var/log -m 2048MB --memory-swap=2048MB --cpus=2 -it ${CRPD_IMAGE}
-
-
-
-   #docker run -it --rm --net=dhcp-net alpine
-   #docker run --rm --detach --name alpine01 -h alpine01 -it alpine
-   #docker network connect --ip=10.10.0.101 dhcp-net alpine01
-   #
-   #ip link set veth0 master dhcp-net
-
+    echo "=== net stop ==="
+    ip netns delete dhcpns
+    ip link set br2 down
+    ip link del dev br2
+    #ip link del dev dhcp1
+    #ip link del dev dhcp2
 
 }
 
 ############################################################
-function start_dhcp_clients {
+function net_start {
 
-   docker run --rm --detach --name alpine01 -h alpine01 --network dhcp-net -it alpine
-   docker run --rm --detach --name alpine02 -h alpine02 --network dhcp-net -it alpine
-   docker run --rm --detach --name alpine03 -h alpine03 --network dhcp-net -it alpine
-
-}
-
-############################################################
-function stop_dhcp_server {
-
-sudo docker stop dhcp
-
-
-}
-############################################################
-function stop_crpd {
-    $DOCKER stop crpd01
-    $DOCKER stop crpd02
-    $DOCKER network rm crpd-net
-}
-
-############################################################
-function start_crpd {
-
-   echo "Create network crpd-net"
-   $DOCKER network inspect crpd-net --format {{.Id}} 2>/dev/null || \
-   #$DOCKER network create crpd-net -d ipvlan \
-   $DOCKER network create crpd-net \
-   --subnet=192.1.1.0/24 \
-   --gateway=192.1.1.1 \
-   --opt com.docker.network.driver.mtu=9216 \
-   --opt com.docker.network.bridge.name=crpd-net
-   #$DOCKER network create crpd-net -d macvlan \
-   #--opt com.docker.network.driver.mtu=9216 \
-   #--opt com.docker.network.bridge.name=crpd-net
-
-   #-e SYSLOG_TO_STDOUT='yes'
-   echo "Create crpd01"
-   docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
-   echo "Create crpd02"
-   docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -it crpd:22.2R1.9
-
-   docker network connect --ip=192.1.1.2 crpd-net crpd01
-   docker network connect --ip=192.1.1.3 crpd-net crpd02
+    echo "=== net start ==="
+    ip link add br2 type bridge
+    ip link add dhcp1 type veth peer dhcp2
+    ip link set dhcp1 master br2
+    ip addr add 10.10.10.1/24 dev br2
+    ip link set br2 up
+    ip link set dhcp1 up
+    
+    ip netns add dhcpns
+    ip link set dhcp2 netns dhcpns
+    ip link set dhcp1 up
+    #ip netns exec dhcpns ip addr add 10.10.10.2/24 dev dhcp2
+    ip netns exec dhcpns ip link set dhcp2 up
 
 }
 
 ############################################################
+function kea_server {
+
+    set -x
+    $DHCP_SERVER -d -c etc/kea/kea-dhcp4.conf
+
+}
+
+############################################################
+function monitor_queue {
+
+    set -x
+    mosquitto_sub -h 10.10.10.1 -t dhcp_server
+
+}
+
+############################################################
+function kea_client {
+
+    set -x
+    #ip netns exec dhcpns ping -c 2 10.10.10.1
+    ip netns exec dhcpns dhclient -d -v 
+
+}
+
+############################################################
+function crpd {
+
+    echo "Create crpd01"
+    docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
+
+    #echo "Create interfaces"
+    #ip link add dhcp2 type veth peer vdhcp2
+    #ip link set dhcp2 master br2
+
+    #echo "Move interface to container"
+    #pid=$(docker inspect crpd01 -f '{{.State.Pid}}')
+    #ip link set vdhcp2 netns $pid
+
+    #echo "In container, run the following:"
+    #echo "ip address add 192.168.10.2/28 dev bgp-net"
+    #echo "ip link set bgp-net up"
+
+
+    echo "Create crpd02"
+    docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -it crpd:22.2R1.9
+
+
+}
+
+############################################################
+function check {
+
+    echo "=== check ==="
+    set -x
+    brctl show br2
+    echo ""
+    ip addr show dev br2
+    echo ""
+    ip addr show dev dhcp1
+    echo ""
+    ip netns exec dhcpns ip addr
+    echo ""
+    ip netns exec dhcpns ping -c 3 10.10.10.1
+}
+
 ########## MAIN ##########
 ############################################################
-
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
 
 if [ $# -eq 0 ]; then
     echo "No function provided:"
@@ -112,6 +114,11 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-eval "$@"
 
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+eval "$@"
 

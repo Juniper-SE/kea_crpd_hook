@@ -1,0 +1,142 @@
+#!/bin/bash
+
+#set -e   # exit on error
+#set -n  # syntax checking only
+
+DOCKER="/usr/bin/docker";
+
+
+# sudo ip link add eth_bri type bridge
+
+############################################################
+function setup {
+
+   echo "download kea"
+   docker pull tr3g0r/kea-dhcp
+
+   #mkdir etc/kea and usr/local
+   mkdir -p  a+x usr/local/kea/sbin
+   touch usr/local/kea/sbin/kea-lfc
+   chown -R kia.kia usr/local/kea
+   chmod a+x usr/local/kea/sbin/kea-lfc
+
+   echo "===== Install MQTT ====="
+   sudo apt update -y && sudo apt install mosquitto mosquitto-clients -y
+   sudo apt install python3-paho-mqtt
+   sudo systemctl start mosquitto
+   sudo systemctl status mosquitto
+
+}
+############################################################
+function start_mqtt {
+
+   sudo systemctl start mosquitto
+   sudo systemctl status mosquitto
+
+   # mosquitto_sub -h localhost -t /dhcp_server
+
+}
+
+############################################################
+
+function start_dhcp_server {
+
+   echo "Create network dhcp-net"
+   $DOCKER network inspect dhcp-net --format {{.Id}} 2>/dev/null || \
+   $DOCKER network create dhcp-net -d macvlan \
+   --opt com.docker.network.driver.mtu=9216 \
+   --opt com.docker.network.bridge.name=dhcp-net
+
+   docker run --rm --detach --name dhcp -h dhcp -v "$(pwd)"/etc/kea:/etc/kea -v "$(pwd)"/usr/local/kea/var/log/:/usr/local/kea/var/log/ -it tr3g0r/kea-dhcp
+   docker network connect --ip=192.0.2.2 dhcp-net dhcp
+
+   #echo "Create container u-rr"
+   #$DOCKER run --rm --detach --name u-rr -h u-rr --privileged -v "$(pwd)"/${HOSTNAME}/u-rr/config:/config -v "$(pwd)"/${HOSTNAME}/u-rr/log:/var/log -m 2048MB --memory-swap=2048MB --cpus=2 -it ${CRPD_IMAGE}
+
+
+
+   #docker run -it --rm --net=dhcp-net alpine
+   #docker run --rm --detach --name alpine01 -h alpine01 -it alpine
+   #docker network connect --ip=10.10.0.101 dhcp-net alpine01
+   #
+   #ip link set veth0 master dhcp-net
+
+
+}
+
+############################################################
+function start_dhcp_clients {
+
+   $DOCKER run --rm --detach --name alpine01 -h alpine01 --network dhcp-net -it alpine
+   $DOCKER run --rm --detach --name alpine02 -h alpine02 --network dhcp-net -it alpine
+   $DOCKER run --rm --detach --name alpine03 -h alpine03 --network dhcp-net -it alpine
+
+}
+
+############################################################
+function stop_dhcp_clients {
+
+   $DOCKER stop alpine01
+   $DOCKER stop alpine02
+   $DOCKER stop alpine03
+
+}
+
+############################################################
+function stop_dhcp_server {
+
+   $DOCKER stop dhcp
+
+}
+############################################################
+function stop_crpd {
+    $DOCKER stop crpd01
+    $DOCKER stop crpd02
+    $DOCKER network rm crpd-net
+}
+
+############################################################
+function start_crpd {
+
+   echo "Create network crpd-net"
+   $DOCKER network inspect crpd-net --format {{.Id}} 2>/dev/null || \
+   #$DOCKER network create crpd-net -d ipvlan \
+   $DOCKER network create crpd-net \
+   --subnet=192.1.1.0/24 \
+   --gateway=192.1.1.1 \
+   --opt com.docker.network.driver.mtu=9216 \
+   --opt com.docker.network.bridge.name=crpd-net
+   #$DOCKER network create crpd-net -d macvlan \
+   #--opt com.docker.network.driver.mtu=9216 \
+   #--opt com.docker.network.bridge.name=crpd-net
+
+   #-e SYSLOG_TO_STDOUT='yes'
+   echo "Create crpd01"
+   docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
+   echo "Create crpd02"
+   docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -it crpd:22.2R1.9
+
+   docker network connect --ip=192.1.1.2 crpd-net crpd01
+   docker network connect --ip=192.1.1.3 crpd-net crpd02
+
+}
+
+############################################################
+########## MAIN ##########
+############################################################
+
+if [ $# -eq 0 ]; then
+    echo "No function provided:"
+    echo ""
+    compgen -A function
+    exit 1
+fi
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+eval "$@"
+
+
