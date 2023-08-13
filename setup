@@ -14,8 +14,12 @@ function net_stop {
     ip netns delete dhcpns
     ip link set br2 down
     ip link del dev br2
-    #ip link del dev dhcp1
+    ip link del dev dhcp1
     #ip link del dev dhcp2
+    
+    ip link del crpd01
+    ip link del crpd02
+    ip link del crpd_bridge
 
 }
 
@@ -64,28 +68,49 @@ function kea_client {
 }
 
 ############################################################
-function crpd {
+function crpd_start {
+
+    ip link add crpd_bridge type bridge
+    ip link set crpd_bridge up
+    ip address add 192.168.10.1/28 dev crpd_bridge
 
     echo "Create crpd01"
     docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
 
-    #echo "Create interfaces"
-    #ip link add dhcp2 type veth peer vdhcp2
-    #ip link set dhcp2 master br2
-
-    #echo "Move interface to container"
-    #pid=$(docker inspect crpd01 -f '{{.State.Pid}}')
-    #ip link set vdhcp2 netns $pid
-
-    #echo "In container, run the following:"
-    #echo "ip address add 192.168.10.2/28 dev bgp-net"
-    #echo "ip link set bgp-net up"
+    echo "Create crpd01 interface and assign to container"
+    ip link add crpd01 type veth peer vcrpd01
+    ip link set crpd01 master crpd_bridge
+    ip link set crpd01 up
+    pid=$(docker inspect crpd01 -f '{{.State.Pid}}')
+    ip link set vcrpd01 netns $pid
+    docker exec -it crpd01 bash -c "ip address add 192.168.10.2/28 dev vcrpd01"
+    docker exec -it crpd01 bash -c "ip link set vcrpd01 up"
+    docker exec -it crpd01 bash -c "ip route del default"
+    docker exec -it crpd01 bash -c "ip route add default via 192.168.10.1"
 
 
     echo "Create crpd02"
     docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -it crpd:22.2R1.9
 
+    echo "Create crpd02 interface and assign to container"
+    ip link add crpd02 type veth peer vcrpd02
+    ip link set crpd02 master crpd_bridge
+    ip link set crpd02 up
+    pid=$(docker inspect crpd02 -f '{{.State.Pid}}')
+    ip link set vcrpd02 netns $pid
+    docker exec -it crpd02 bash -c "ip address add 192.168.10.3/28 dev vcrpd02"
+    docker exec -it crpd02 bash -c "ip link set vcrpd02 up"
+    docker exec -it crpd02 bash -c "ip route del default"
+    docker exec -it crpd02 bash -c "ip route add default via 192.168.10.1"
 
+
+}
+
+############################################################
+function crpd_stop {
+
+    docker stop crpd01
+    docker stop crpd02
 }
 
 ############################################################
