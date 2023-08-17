@@ -75,7 +75,7 @@ function crpd_start {
     ip address add 192.168.10.1/28 dev crpd_bridge
 
     echo "Create crpd01"
-    docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -it crpd:22.2R1.9
+    docker run --rm --detach --name crpd01 -h crpd01 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd01_config:/config -v "$(pwd)"/crpd01_varlog:/var/log -v "$(pwd)"/crpd01_scripts:/var/db/scripts -it crpd:22.2R1.9
 
     echo "Create crpd01 interface and assign to container"
     ip link add crpd01 type veth peer vcrpd01
@@ -90,7 +90,7 @@ function crpd_start {
 
 
     echo "Create crpd02"
-    docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -it crpd:22.2R1.9
+    docker run --rm --detach --name crpd02 -h crpd02 --privileged -e SYSLOG_TO_STDOUT='yes' -v "$(pwd)"/crpd02_config:/config -v "$(pwd)"/crpd02_varlog:/var/log -v "$(pwd)"/crpd02_scripts:/var/db/scripts -it crpd:22.2R1.9
 
     echo "Create crpd02 interface and assign to container"
     ip link add crpd02 type veth peer vcrpd02
@@ -103,12 +103,16 @@ function crpd_start {
     docker exec -it crpd02 bash -c "ip route del default"
     docker exec -it crpd02 bash -c "ip route add default via 192.168.10.1"
 
+    #May have to change chain FORWARD to Accept if containers can't ping each other
+    # (This is a slugehammer removing security, use scaple if needed)
+    iptables -P FORWARD ACCEPT
 
 }
 
 ############################################################
 function crpd_stop {
 
+    set -x
     docker stop crpd01
     docker stop crpd02
 }
